@@ -16,8 +16,6 @@ import java.util.Optional;
 public class DemandeService {
     @Autowired
     private DemandeRepo demandeRepo;
-
-
     @Autowired
     private EmployeeRepo employeeRepo;
     @Autowired
@@ -54,9 +52,13 @@ public class DemandeService {
         demande1.setReponse(currentDemande.getReponse());
         demande1.setDescription(currentDemande.getDescription());
         demande1.setTitre(currentDemande.getTitre());
-        demande1.setEmployee(currentDemande.getEmployee());
-        demande1.setMotifdemande(currentDemande.getMotifdemande());
-        currentDemande.getEmployee().getFirstname();
+        Optional<Employee> employeeOptional = employeeRepo.findById(employee_id);
+        Employee employee = employeeOptional.get();
+        demande1.setEmployee(employee);
+        Optional<MotifDemande> motifDemandeOptional = motifDemandeRepo.findById(Motif_id);
+        MotifDemande motifDemande = motifDemandeOptional.get();
+        demande1.setMotifdemande(motifDemande);
+
         saveDemande(demande1, employee_id, Motif_id);
     }
 

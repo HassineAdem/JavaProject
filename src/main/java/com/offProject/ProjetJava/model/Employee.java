@@ -44,7 +44,7 @@ public class Employee {
         this.age = age;
     }
 
-    @JsonIgnore
+
     public List<Demande> getDemandes() {
         return demandes;
     }

@@ -42,7 +42,7 @@ public class EmployeeService {
         if (employeeOptional.isPresent()) {
             Employee employee = employeeOptional.get();
 
-
+     employee.setAge(currentEmployee.getAge());
             employee.setFirstname(currentEmployee.getFirstname());
             employee.setLastname(currentEmployee.getLastname());
             employee.setEmail(currentEmployee.getEmail());

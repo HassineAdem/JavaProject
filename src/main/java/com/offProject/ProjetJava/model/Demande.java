@@ -15,7 +15,7 @@ public class Demande {
     @Column(name = "titre")
     private String titre;
     @Column(name = "debut")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Timestamp debut;
     @Column(name = "reponse")
     private String reponse;
